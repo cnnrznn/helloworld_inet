@@ -46,13 +46,13 @@ int main()
     // send data
     strcpy(buf, "Hello server!");
     printf("Sending to server: '%s'\n", buf);
-    //write(lsock, (void *)buf, BUF_SIZE);
-    send(lsock, (void *)buf, BUF_SIZE, 0);
+    write(lsock, (void *)buf, BUF_SIZE);
+    //send(lsock, (void *)buf, BUF_SIZE, 0);
     clear_buf((void *)buf, BUF_SIZE);
 
     // receive response
-    //read(lsock, (void *)buf, BUF_SIZE);
-    recv(lsock, (void *)buf, BUF_SIZE, 0);
+    read(lsock, (void *)buf, BUF_SIZE);
+    //recv(lsock, (void *)buf, BUF_SIZE, 0);
     printf("Receving from server: '%s'\n", buf);
     clear_buf((void *)buf, BUF_SIZE);
 

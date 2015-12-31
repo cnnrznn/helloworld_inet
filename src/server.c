@@ -54,15 +54,15 @@ int main()
     }
 
     // receive message
-    //read(rsock, (void *)buf, BUF_SIZE);
-    recv(rsock, (void *)buf, BUF_SIZE, 0);
+    read(rsock, (void *)buf, BUF_SIZE);
+    //recv(rsock, (void *)buf, BUF_SIZE, 0);
     printf("Receving from client: '%s'\n", buf);
     clear_buf((void *)buf, BUF_SIZE);
 
     // send response
     strcpy(buf, "I got your message!");
-    //write(rsock, buf, BUF_SIZE);
-    send(rsock, buf, BUF_SIZE, 0);
+    write(rsock, buf, BUF_SIZE);
+    //send(rsock, buf, BUF_SIZE, 0);
     clear_buf((void *)buf, BUF_SIZE);
 
     close(lsock);
