@@ -3,11 +3,11 @@ EXECS = client server
 
 all: client server
 
-client: client.c definitions.h $(OBJ)
-	gcc $(CFLAGS) client.c -o client
+client: src/client.c include/definitions.h
+	gcc $(CFLAGS) src/client.c -o client
 
-server: server.c definitions.h $(OBJ)
-	gcc $(CFLAGS) server.c -o server
+server: src/server.c include/definitions.h
+	gcc $(CFLAGS) src/server.c -o server
 
 clean:
 	rm $(EXECS)
