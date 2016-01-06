@@ -61,6 +61,7 @@ int main()
 
     // send response
     strcpy(buf, "I got your message!");
+    printf("Sending to client: '%s'\n", buf);
     write(rsock, buf, BUF_SIZE);
     //send(rsock, buf, BUF_SIZE, 0);
     clear_buf((void *)buf, BUF_SIZE);
